@@ -1,77 +1,162 @@
-# Deployment and DevOps for MERN Applications
+# Real-Time Chat Application
 
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
+A **real-time chat application** built with **React**, **Socket.IO**, and **Node.js**. Users can send and receive messages instantly, see who is online, and enjoy a responsive, user-friendly interface.
 
-## Assignment Overview
+---
 
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
+## 📝 Project Overview
 
-## Getting Started
+This project demonstrates a basic **real-time chat system** using Socket.IO for instant communication between clients and a Node.js server. The frontend is built with React and styled using Tailwind CSS. The application supports:
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
+- Dynamic message sending and receiving in real-time
+- Active user list updates
+- Responsive design for various screen sizes
+- Easy-to-extend architecture for future features like chat rooms or private messaging
 
-## Files Included
+---
 
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
+## ⚡ Features Implemented
 
-## Requirements
+- **Real-Time Messaging:** Messages are instantly broadcasted to all connected users.
+- **Dynamic User List:** See a live list of connected users.
+- **Responsive UI:** Styled with Tailwind CSS for a clean, modern look.
+- **Socket Context:** React context for global socket access.
+- **Custom Hooks:** Manage chat state efficiently with React hooks.
 
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
+---
 
-## Deployment Platforms
+## 🛠️ Setup Instructions
 
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
+### Backend (Server)
 
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
+1. Navigate to the server folder:
 
-## CI/CD Pipeline
+```bash
+cd server
+Install dependencies:
 
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
+bash
+npm install
+Start the backend server:
 
-## Submission
+bash
+node sever.js
+The server will run on http://localhost:5000.
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+Frontend (Client)
+Navigate to the client folder:
 
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
+bash
+cd client
+Install dependencies:
 
-## Resources
+bash
+Copy code
+npm install
+Start the frontend:
 
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+bash
+npm run dev
+The client will run on http://localhost:5173
+
+🚀 Usage
+Open the frontend in browser (http://localhost:5173).
+
+Enter a username to join the chat.
+
+Start sending messages to other users.
+
+📸 Screenshots
+screenshots/image1.png
+screenshots/image2.png
+screenshots/image3.png
+screenshots/image4.png
+screenshots/image5.png
+
+
+📁 Project Structure
+real-time-communication-with-socket-io-DEV-EVELYNE/
+│
+├─ client/                             # React frontend
+│  ├─ node_modules/                    # Installed dependencies
+│  ├─ public/                          # Public assets
+│  │  └─ vite.svg                       # Default Vite logo
+│  ├─ src/                              # Source code
+│  │  ├─ assets/                        # Images, icons, and static assets
+│  │  ├─ components/                    # React UI components
+│  │  │  ├─ MessageInput.jsx             # Component for typing messages
+│  │  │  ├─ MessageList.jsx              # Component for displaying messages
+│  │  │  └─ UserList.jsx                 # Component for showing online users
+│  │  ├─ context/                        # React context for global state
+│  │  │  └─ SocketContext.jsx            # Provides socket connection to the app
+│  │  ├─ hooks/                          # Custom React hooks
+│  │  │  └─ useChat.jsx                  # Hook for chat state management
+│  │  ├─ pages/                          # React pages
+│  │  │  └─ ChatPage.jsx                 # Main chat page
+│  │  ├─ socket/                         # Socket client setup
+│  │  │  └─ socket.js                     # Initializes socket connection
+│  │  ├─ App.jsx                          # Root React component
+│  │  ├─ App.css                          # App styling
+│  │  ├─ index.css                        # Global styles
+│  │  └─ main.jsx                         # React entry point
+│  ├─ .env                               # Environment variables
+│  ├─ package.json                        # Frontend dependencies and scripts
+│  ├─ vite.config.js                       # Vite configuration
+│  └─ tailwind.config.js                   # Tailwind CSS configuration
+│
+├─ server/                             # Node.js backend
+│  ├─ config/                           # Configuration files
+│  │  └─ config.js                        # Server configuration (ports, DB, etc.)
+│  ├─ controllers/                       # API controllers
+│  │  ├─ chatController.js                # Chat-related logic
+│  │  ├─ notificationController.js       # Notifications handling
+│  │  └─ userController.js               # User management logic
+│  ├─ models/                            # Database models (if any)
+│  ├─ socket/                            # Socket.io logic
+│  │  └─ socketHandler.js                # Handles socket events
+│  ├─ utils/                             # Utility functions
+│  │  ├─ formatMessage.js                # Formats chat messages
+│  │  └─ logger.js                        # Logging helper
+│  ├─ .env                               # Environment variables
+│  ├─ package.json                        # Backend dependencies and scripts
+│  └─ index.js                             # Server entry point
+│
+├─ screenshots/                          # Screenshots or GIFs of the app
+│
+├─ README.md                              # Project documentation
+└─ Week5-Assignment.md                     # Assignment n
+
+🔗 Socket.IO Events
+Frontend
+connect → Establishes connection with server
+
+disconnect → Handles user disconnection
+
+sendMessage → Sends a new message
+
+receiveMessage → Receives messages from the server
+
+updateUsers → Updates the active user list
+
+Backend
+connection → Triggered on a new socket connection
+
+disconnect → Triggered when a user disconnects
+
+sendMessage → Broadcasts messages to all users
+
+updateUsers → Sends updated user list
+
+📜 License
+License © 2025
+
+👤 Author
+Evelyne Kavwele
+
+
+
+
+
+
+
+
