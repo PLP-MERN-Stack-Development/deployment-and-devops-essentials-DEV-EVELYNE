@@ -57,7 +57,7 @@ Start the frontend:
 
 bash
 npm run dev
-The client will run on http://localhost:5173
+The client will run on http://localhost:517
 
 🚀 Usage
 Open the frontend in browser (http://localhost:5173).
@@ -72,6 +72,17 @@ screenshots/image2.png
 screenshots/image3.png
 screenshots/image4.png
 screenshots/image5.png
+
+**DEPLOYMENT**
+BACKEND URL
+https://real-time-communication-with-socket-io-i409.onrender.com
+FRONTEND URL
+https://real-time-communication-with-socket-topaz.vercel.app/
+SCREENSHOTS
+<img width="1415" height="772" alt="image" src="https://github.com/user-attachments/assets/e5a0c8fc-626a-4e8e-b085-3f0ad7b7e019" />
+<img width="1388" height="745" alt="image" src="https://github.com/user-attachments/assets/83f39ca8-636b-43f2-bd1b-0efed8a0e3fd" />
+
+
 
 
 📁 Project Structure
